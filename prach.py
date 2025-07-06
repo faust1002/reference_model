@@ -229,7 +229,6 @@ def generate_prach(frame_type : frame_defs.FrameType, rach_ConfigCommon : RACH_C
     preamble_id = np.random.randint(0, rach_ConfigCommon.totalNumberOfRA_Preambles)
     config_generic = rach_ConfigCommon.rach_ConfigGeneric
     fmt = __PrachConfigurationIndex[frame_type][config_generic.prach_ConfigurationIndex]['preamble_format']
-    print(type(fmt))
     logging.debug('PRACH configuration index: %s, PRACH format: %s, logical root sequence index: %u, zero correlation config zone: %u, set %s, preamble ID:  %u',
                   config_generic.prach_ConfigurationIndex, fmt, rach_ConfigCommon.prach_RootSequenceIndex, config_generic.zeroCorrelationConfigZone, rach_ConfigCommon.restrictedSetConfig, preamble_id)
     preamble_format = __PrachPreamblesFormats[fmt]
